@@ -4,6 +4,8 @@ A hacky proof of concept in Python showing lax security in DEI brand (Viper, Cli
 
 All API requests are made via HTTPS, but all endpoints use GET parameters. Username and password are sent in the clear from mobile devices over wifi or cellular data. Additionally, no noops are present and session IDs are also sent via parameter, so session hijacking and packet replay attacks are possible even if the username and password was not able to be sniffed.
 
+**DISCLAIMER**: Each account has a fixed amount of API calls. My 3 year plan had 22500. You should be fine as long as you don't do anything stupid.
+
 ## Usage
 
 ### Setup
