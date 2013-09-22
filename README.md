@@ -6,6 +6,8 @@ All API requests are made via HTTPS, but all endpoints use GET parameters. Usern
 
 ## Usage
 
+### Setup
+
 Assuming Python is installed, this script can be installed as follows:
 
     git clone git://github.com/nearengine/smartstart.py.git && cd smartstart.py
@@ -17,3 +19,15 @@ Then add your SmartStart credentials to `login.json` and:
     ./smartstart.py <command> [<device>]
 
 You can omit the arguments for a list of commands. Windows users, you're on your own ;)
+
+### Commands
+
+    arm    - locks and arms the vehicle
+    disarm - unlocks and disarms the vehicle
+    trunk  - opens the trunk, if equipped
+    panic  - starts the alarm
+    remote - starts the engine
+    locate - attempts to locate vehicle
+    
+
+An integer of range `0 - ?` is used for the optional second argument if you have multiple devices on your account.
