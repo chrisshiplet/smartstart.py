@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import time, sys, json
+import time, sys, json, os
 import requests
 
 man = '''
@@ -50,8 +50,9 @@ else:
         dev_sel = 0
 
 # Load username & password from config file as JSON
+fpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'login.json')
 try:
-    user = open('login.json')
+    user = open(fpath)
     user = json.load(user)
 except:
     print 'error parsing login.json'
