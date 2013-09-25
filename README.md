@@ -1,10 +1,10 @@
 # smartstart.py
 
-A hacky proof of concept in Python showing lax security in DEI brand (Viper, Clifford, Python, etc) SmartStart remote start systems, and possibly other vendors utilizing Cal Amp's asset monitoring API.
+A hacky proof of concept in Python showing lax security in DEI brand (Viper, Clifford, Python, etc) SmartStart remote start systems' iOS app.
 
-All API requests are made via HTTPS, but all endpoints use GET parameters. Username and password are sent in the clear from mobile devices over wifi or cellular data. Additionally, no noops are present and session IDs are also sent via parameter, so session hijacking and packet replay attacks are possible even if the username and password was not able to be sniffed.
+All API requests are made via HTTPS, but the app doesn't validate certificates. This allows traffic to be easily spoofed with an HTTPS proxy. Username and password are sent in the GET requests from mobile devices over wifi or cellular data. Additionally, no noops are present and session IDs are also sent via parameter, so session hijacking and packet replay attacks may also be possible even if the username and password was not able to be sniffed.
 
-**DISCLAIMER**: Each account has a fixed amount of API calls. My 3 year plan had 22500. You should be fine as long as you don't do anything stupid.
+**DISCLAIMER**: Each account has a fixed amount of API calls. My 3 year plan had 22500. You should be fine as long as you don't do anything stupid. This project does not sniff traffic, it's simply a demonstration of the app's API to show what is possible with the obtained data.
 
 ## Usage
 
