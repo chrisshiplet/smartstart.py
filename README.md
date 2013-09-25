@@ -1,6 +1,6 @@
 # smartstart.py
 
-A hacky proof of concept in Python showing lax security in DEI brand (Viper, Clifford, Python, etc) SmartStart remote start systems' iOS app.
+A hacky proof of concept in Python showing lax security in DEI brand (Viper, Clifford, Python, etc) SmartStart remote start systems' iOS app (and possibly others).
 
 All API requests are made via HTTPS, but the app doesn't validate certificates. This allows traffic to be easily spoofed with an HTTPS proxy. Username and password are sent in the GET requests from mobile devices over wifi or cellular data. Additionally, no noops are present and session IDs are also sent via parameter, so session hijacking and packet replay attacks may also be possible even if the username and password was not able to be sniffed.
 
